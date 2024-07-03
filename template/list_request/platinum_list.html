@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block baseblock%}
+    <div class="container" align="center">
+        <h1>Welcome to Electronics Gadgets </h1>
+        {% if objects %}
+        <table border="1px ">
+            <thead>
+            <th>fname</th>
+            <th>lname</th>
+            <th>dob </th>
+            <th>mobile</th>
+            <th>address</th>
+            </thead>
+            {% for obj in objects %}
+            <tr>
+                <td>{{obj.fname}}</td>
+                <td>{{obj.lname}}</td>
+                <td>{{obj.dob}}</td>
+                <td>{{obj.mobile}}</td>
+                <td>{{obj.address}}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+        {% else %}
+        <h1>No data found</h1>
+
+        {% endif %}
+    </div>
+{%endblock%}
+</body>
+</html>
